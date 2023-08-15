@@ -20,9 +20,7 @@ const userAuth = [{
 }]
 
 const getUserAuthenticated = (user) => {
-    //mostra o escrito
-    console.log(userAuth)
-
+//mostra um usuário
         if (user.name == userVer.name && user.email == userVer.email && user.password == user.Verpassword){
             return(userAuth)
         }
@@ -33,6 +31,7 @@ const getUserAuthenticated = (user) => {
 
 
 const getUsers = () =>{
-//mostra tudo
+//mostra todos os usuários
 }
+
 export { getUsers, getUserAuthenticated };
