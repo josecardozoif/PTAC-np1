@@ -21,6 +21,7 @@ const userAuth = [{
 
 const getUserAuthenticated = (user) => {
 //mostra um usuário
+//fazer um map comparando, já tenho o if else mas falta o map.
         if (user.name == userVer.name && user.email == userVer.email && user.password == user.Verpassword){
             return(userAuth)
         }
