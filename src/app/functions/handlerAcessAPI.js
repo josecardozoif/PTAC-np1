@@ -27,8 +27,8 @@ const getUserAuthenticated = (user) => {
     crias.map((cria) => { //mapea o array, acessa individualmente os crias
     if(user.email == cria.email && user.password == cria.password){//se batem
         userAuth = cria
-    }
-    }
+            }
+        }
     )
     console.log(userAuth)
     return userAuth
