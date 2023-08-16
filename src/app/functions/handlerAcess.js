@@ -4,7 +4,7 @@ import { getUserAuthenticated } from "./handlerAcessAPI";
 
 const handlerAcessUser = async (user) => {
 
-    const userAuth = await getUserAuthenticated(user);
+    const userAuth = await getUserAuthenticated(user);//pega usuário autenticado
     
     const isTokenValidate = validateToken(userAuth.token);
 

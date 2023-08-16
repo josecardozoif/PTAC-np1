@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [user, setUser] = useState({
-    name: '',
     email: '',
     password: '',
   });
@@ -24,11 +23,6 @@ export default function Login() {
     <div>
       <h1>Login</h1>
       <form onSubmit={handlerLogin}>
-        <input
-          placeholder='Nome'
-          type="text"
-          onChange={(e) => { setUser({...user, name: e.target.value}) }}>
-        </input>
         <input
           placeholder='E-mail'
           type="email"

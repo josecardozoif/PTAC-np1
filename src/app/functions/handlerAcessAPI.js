@@ -1,6 +1,6 @@
 'use server'
 
-const userAuth = [{
+const crias = [{
     name:"Vito",
     email:"vito@gmail.com",
     password:"123",
@@ -20,19 +20,20 @@ const userAuth = [{
 }]
 
 const getUserAuthenticated = (user) => {
-//mostra um usuário
+//mostra um usuário (cria)
+//verificação com dados escrito com os dados no "database"
 //fazer um map comparando, já tenho o if else mas falta o map.
-        if (user.name == userVer.name && user.email == userVer.email && user.password == user.Verpassword){
-            return(userAuth)
-        }
-        else{
-            return("Insira os Dados Corretamente")
-        }
+    crias.map((cria) => { //mapea o array, acessa individualmente os crias
+    if(user.email == cria.email && user.password == cria.password){//se batem
+        console.log(cria)
+        return cria
     }
+    })
+}
 
 
 const getUsers = () =>{
-//mostra todos os usuários
+//mostra todos os usuários (crias)
 }
 
 export { getUsers, getUserAuthenticated };
