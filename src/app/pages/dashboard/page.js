@@ -1,13 +1,14 @@
 import { getUsers } from "@/app/functions/handlerAcessAPI";
+import { Suspense } from "react";
+import ListUsers from "@/app/components/ListUsers";
 
 export default async function Dashboard() {
-   const crias = getUsers()//ifood chegou 
-
+    const users = await getUsers();
     return (
         <div>
-            <h1>Dashboard</h1>
-            
-            {crias.map((cria) => <p>{cria.name}</p>)}
+            <Suspense fallback={<p>Carregando...</p>}>
+                <ListUsers users={users}/>
+            </Suspense>
         </div>
-    );
-};
+    )
+}
