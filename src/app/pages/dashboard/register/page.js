@@ -2,26 +2,26 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import handlerAcessUser from "./functions/handlerAcess";
+import handlerAcessUser from "../../../functions/handlerAcess";
 import { Suspense } from "react";
 
-export default async function Alter(){
+export default async function Register(){
 const [user, setUser] = useState({
     name: '',
     email: '',
     password: '',
 });
 
-const handlerAlter = async (e) => {
+const handlerRegister = async (e) => {
     e.preventDefault();
     try {
       const userAuth = await handlerAcessUser(user);
       if(userAuth.token === undefined){
-        toast.error("...!");
+        toast.error("Esse usuário já existe!");
       }
       push('/pages/dashboard');
     } catch {
-      toast.error("...!");
+      toast.success("Cadastro efetuado com sucesso!");
       refresh();
     }
   }
@@ -29,8 +29,8 @@ const handlerAlter = async (e) => {
 return (
     <div>
     <Suspense fallback={<p>Carregando...</p>}>
-      <h1>Altere seus dados</h1>
-      <form onSubmit={handlerAlter}>
+      <h1>Cadastre-se</h1>
+      <form onSubmit={handlerRegister}>
         <input
           placeholder='Nome'
           type="text"
@@ -46,7 +46,7 @@ return (
           type='password'
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
         </input>
-        <button>Alterar</button>
+        <button>Cadastrar</button>
       </form>
       <ToastContainer/>
     </Suspense>

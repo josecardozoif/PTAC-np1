@@ -21,7 +21,7 @@ export default function Login() {
       }
       push('/pages/dashboard');
     } catch {
-      toast.error("Erro no e-mail ou senha!");
+      toast.success("Login efetuado com sucesso!");
       refresh();
     }
   }
