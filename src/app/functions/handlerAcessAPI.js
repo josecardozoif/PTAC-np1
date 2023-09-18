@@ -30,7 +30,6 @@ const getUserAuthenticated = (user) => {
             }
         }
     )
-    console.log(userAuth)
     return userAuth
 }
 

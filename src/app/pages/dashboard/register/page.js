@@ -1,30 +1,14 @@
 'use client'
-import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import handlerAcessUser from "../../../functions/handlerAcess";
 import { Suspense } from "react";
 
-export default async function Register(){
-const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
-});
+export default async function Login(){
 
 const handlerRegister = async (e) => {
     e.preventDefault();
-    try {
-      const userAuth = await handlerAcessUser(user);
-      if(userAuth.token === undefined){
-        toast.error("Esse usuário já existe!");
-      }
-      push('/pages/dashboard');
-    } catch {
       toast.success("Cadastro efetuado com sucesso!");
-      refresh();
-    }
-  }
+}
 
 return (
     <div>
