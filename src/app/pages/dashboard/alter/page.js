@@ -1,40 +1,35 @@
 'use client'
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { Suspense } from "react";
+import 'react-toastify/dist/ReactToastify.css';
 
-export default async function Login(){
+export default function Login(){
 
-const handlerAlter = async (e) => {
+const handlerAlt = async (e) => {
     e.preventDefault();
       toast.success("Alteração efetuada com sucesso!");
 }
-
-
 return (
     <div>
-    <Suspense fallback={<p>Carregando...</p>}>
       <h1>Altere seus dados</h1>
-      <form onSubmit={handlerAlter}>
+      <form onSubmit={handlerAlt}>
         <input
           placeholder='Nome'
           type="text"
-          onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
+          required>
         </input>
         <input
           placeholder='E-mail'
           type="email"
-          onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
+          required>
         </input>
         <input
           placeholder='Senha'
           type='password'
-          onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
+          required>
         </input>
         <button>Alterar</button>
+        <ToastContainer/>
       </form>
-      <ToastContainer/>
-    </Suspense>
     </div>
 )
 }
