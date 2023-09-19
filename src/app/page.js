@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <body className={styles.body}>
     <div className={styles.div}>
-      <h1 className={styles.h1}>Faça Se Login</h1>
+      <h1 className={styles.h1}>Faça Seu Login</h1>
       <form onSubmit={handlerLogin}>
         <input className={styles.input1}
           placeholder='E-mail'
