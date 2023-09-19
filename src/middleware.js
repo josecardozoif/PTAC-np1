@@ -21,12 +21,12 @@ export const middleware = (request) => {
         }
     }
     if (!isTokenValidated || !token) {
-        if (request.nextUrl.pathname === '/pages/dashboard/alter') {
+        if (request.nextUrl.pathname === '/pages/alter') {
             return NextResponse.redirect(urlLogin);
         }
     }
     if (!isTokenValidated || !token) {
-        if (request.nextUrl.pathname === '/pages/dashboard/register') {
+        if (request.nextUrl.pathname === '/pages/register') {
             return NextResponse.redirect(urlLogin);
         }
     }
@@ -35,5 +35,5 @@ export const middleware = (request) => {
     NextResponse.next();
 };
 export const config = {
-    matcher: ['/', '/pages/dashboard', '/pages/dashboard/alter', '/pages/dashboard/register']
+    matcher: ['/', '/pages/dashboard', '/pages/alter', '/pages/register']
 };
